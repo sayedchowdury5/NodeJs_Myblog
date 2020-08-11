@@ -1,0 +1,121 @@
+//display git version running on
+git --version
+
+//initial commit
+git init
+
+//input username and email
+git config --global user.name 'your name here'
+git config --global user.email 'your email here'
+
+//display username
+git config user.name
+
+//go previous directory
+cd..
+
+//go next directory
+cd <directory name>
+
+//make new directory
+mkdir <dir name here>
+
+//make new file
+touch <file name>
+
+//go to vscode editor
+git code .
+
+//go to atom editor
+Atom <file name>
+
+//remove file
+rm <file name>
+
+//remove directory
+rm <dir name>
+
+//check status
+git status
+
+//add single file
+git add <file name>
+
+//add all file from current directory
+git add .
+
+//add specific file format
+git add *.html
+
+//add gitignore file to specify which file or directory should ignore
+touch .gitignore
+
+//remove added file to cached
+git rm --cached <file name>
+
+//commit with single message for specific change
+git commit -m "your msg here"
+
+//commit all
+git commit (press enter, press i to change insert mode, press esc, write :wq and enter)
+
+//view commit record
+git log
+git log --oneline
+
+//show all branches
+git branch -a
+
+//create branch
+git branch <branch name>
+
+//delete branch
+git branch -d <branch name> or git branch -D <branch name>
+
+//change directory to different branch
+git checkout <branch name>
+
+//create branch and move to that branch same time
+git checkout -b <branch name>
+
+//merge branch to master branch
+git merge <branch name>
+
+//connect to githup repo
+git remote
+git remote add origin <http url for repo>
+
+//pull before push to repo
+git pull
+git pull origin master
+
+//push to repository (master branch)
+git push
+git push origin master
+git push -u origin master [Note: for newly created repo]
+
+//push to repository (branch)
+git push origin <branch name>
+
+//clone repository
+git clone <http url for repo which want to clone>
+
+//clear up the console
+clear
+//add features
+git revert <branch name>
+//delete all branch and keep specific branch 
+git reset <branch name>
+//hard mode so that new change will not update
+git reset <branch name> --hard
+
+/**********Solve the push rejected problem******/
+first pull then push
+git pull
+git branch --set-upstream-to-origin/master master
+git pull --allow-unrelated-histories
+if got conflict between files then go to file and remove the comment
+git add .gitignore
+git commit
+git pull
+git push origin master
