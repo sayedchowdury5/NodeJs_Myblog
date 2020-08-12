@@ -1,3 +1,4 @@
+
 var fs = require('fs');
 var data = fs.readFileSync('text.txt');
 console.log(data.toString());
@@ -25,3 +26,13 @@ const setInt = setInterval(() => {
 //get absolute and relative path
 console.log(__dirname);
 console.log(__filename);
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write("hello shama");
+    res.write("This is from imran");
+    res.end();
+}).listen(8080);
+
