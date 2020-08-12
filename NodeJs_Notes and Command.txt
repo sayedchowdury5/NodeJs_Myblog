@@ -1,0 +1,49 @@
+//check node version
+node -v
+
+//start nodeJs
+node
+
+//exit from node to normal command prompt
+press ctrl C double or ctrl D or type .exit
+
+//change directory to different drive
+(drive name) d:
+
+//run file on terminal
+node <file name>
+
+//stop terminal continous output
+ctrl C
+
+//put comment and uncomment block of Vscode
+ctrl+K+C and ctrl+K+U
+
+//move line of code up and down
+alt+UP arrow and alt+DOWN arrow
+
+//solve the execution policy problem on powershell
+https:/go.microsoft.com/fwlink/?LinkID=135170 
+
+*******Status Code*****************
+200 - Ok
+301 - Resource moved
+404 - Not found
+500 - Internal server error
+
+********Status code ranges*********
+100 range - informational responses
+200 range - success codes
+300 range - codes for redirects
+400 range - user or client error codes
+500 range - server error codes
+
+
+********Modules*************
+use to read variable from different files in one module.
+
+**********File system**********
+use to read, write and delete files and directories.
+
+*********streams and buffer***********
+use to load data more faster from big file using buffer by buffer.

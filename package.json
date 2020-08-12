@@ -1,0 +1,23 @@
+{
+  "name": "nodejsbeginning",
+  "version": "1.0.0",
+  "description": "This is my first Node.js project as a beginner.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayedchowdury5/nodeJsBeginning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sayedchowdury5/nodeJsBeginning/issues"
+  },
+  "homepage": "https://github.com/sayedchowdury5/nodeJsBeginning#readme",
+  "dependencies": {
+    "lodash": "^4.17.19"
+  }
+}
