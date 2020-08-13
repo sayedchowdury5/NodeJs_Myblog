@@ -84,4 +84,13 @@ Note: mongoose is an ODM library- object Docoment mapping library
 combination of schemas and models: sechemas meaning here properties and property types
 models here allows us to communicate with database (get, save, delete etc).
 
+/************Password validation methods ======================
+// generating a hash
+userSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
+// checking if password is valid
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.local.password);
+};

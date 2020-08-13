@@ -3,9 +3,10 @@ var express = require('express');
 var moragan = require('morgan');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const Blog  = require('./models/blogs'); //export from blogs.js
+const blogRoutes = require('./routes/blogRoutes');//exported
 const { result } = require('lodash');
-const { find } = require('./models/blogs');
+const { find } = require('./models/blogModel');
+const { render } = require('ejs');
 
 //call the Express function 
 const app = express();
@@ -40,6 +41,7 @@ app.set('view engine', 'ejs');
 
 //using third party middlware to check request
 app.use(express.static('public')); //middleware and static files
+app.use(express.urlencoded({ extended: true })); //encode all url data
 app.use(morgan('dev'));
 
 //mongoose and mongo sandbox routes
@@ -79,18 +81,23 @@ app.use(morgan('dev'));
 //     });
 // });
 
+//**********Render the content********** */
+// app.get('/', (req, res) => {
+//     //res.send('<p>home page</p>');
+//     //res.sendFile('./views/index.html', {root: __dirname});
 
+//     const blog = [
+//         {title: 'Template 1', snippet: 'This is first template'},
+//         {title: 'Template 2', snippet: 'This is second template'},
+//         {title: 'Template 3', snippet: 'This is third template'},
+//     ];
+
+//     res.render('index', {title: 'Home', blog});
+// });
+
+//routes
 app.get('/', (req, res) => {
-    //res.send('<p>home page</p>');
-    //res.sendFile('./views/index.html', {root: __dirname});
-
-    const blogs = [
-        {title: 'Template 1', snippet: 'This is first template'},
-        {title: 'Template 2', snippet: 'This is second template'},
-        {title: 'Template 3', snippet: 'This is third template'},
-    ];
-
-    res.render('index', {title: 'Home', blogs});
+    res.redirect('/blogModel')
 });
 
 app.get('/about', (req, res) => {
@@ -104,25 +111,8 @@ app.get('/about', (req, res) => {
 //     res.redirect('/about');
 // });
 
-//routes
-app.get('/', (req, res) => {
-    res.redirect('/blogs')
-});
-
-//blog routes
-app.get('/blogs', (req, res) => {
-    Blog.find().sort({createdAt: -1})
-    .then((result) => {
-        res.render('index', {title: 'All Blogs', blogs: result});
-    })
-    .catch((err) => {
-        console.log(err);
-    });
-});
-
-app.get('/blogs/create', (req, res) => {
-    res.render('create', {title: 'Create a New Blog'});
-});
+//blog Routes
+app.use(blogRoutes);
 
 //404 page using middleware
 app.use((req, res) => {
