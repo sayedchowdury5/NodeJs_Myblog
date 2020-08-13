@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Tech Gallery| <%= title %></title>
+</head>
+<body>
+    <!-- Insert Dynamic value using EJS package-->
+    <% const name = 'sayed' %>
+    
+    <nav>
+        <div class="site-title">
+            <p><%= name %></p>
+            <a href="/"><h1>Blog Tech Gallery</h1></a>
+            <p>A tech site</p>
+        </div>
+
+        <ul>
+            <li><a href="/">Blogs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blogs/create">New Blogs</a></li>
+        </ul>
+    </nav>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+        <% if(blogs.length > 0) { %>
+            <% blogs.forEach(blogs => {%>
+                <h3 class="title"><%= blogs.title %></h3>
+                <p class="snippet"><%= blogs.snippet %></p>
+            <% }) %>
+        <% } else{ %>
+            <p>There are no blogs to display...</p>
+            <% } %>
+
+    </div>
+</body>
+</html>

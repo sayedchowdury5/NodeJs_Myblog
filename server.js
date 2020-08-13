@@ -38,7 +38,7 @@ var server = http.createServer((req, res) => {
             break;
 
             //Redirect to another file if the expected file not exist
-        case '/about-me':
+        case '/about-us':
             res.statusCode = 301;
             res.setHeader('Location', '/about');
             res.end();

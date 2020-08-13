@@ -22,6 +22,9 @@ ctrl+K+C and ctrl+K+U
 //move line of code up and down
 alt+UP arrow and alt+DOWN arrow
 
+//EJS dynamic value output sign
+<%= (variable name here) %>
+
 //solve the execution policy problem on powershell
 https:/go.microsoft.com/fwlink/?LinkID=135170 
 
