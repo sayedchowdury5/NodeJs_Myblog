@@ -50,3 +50,38 @@ use to read, write and delete files and directories.
 
 *********streams and buffer***********
 use to load data more faster from big file using buffer by buffer.
+
+
+*********Nodemon modules or packages*******
+connect the terminal to server dynamic way.
+load terminal one time then any changes to files automatically will run to server and 
+give respose to browser.
+
+**********lodash module or packages*********
+load a function once even it called multiple times.
+
+**********Express module or packages*********
+instead of using file system it will send the file content to the browser 
+using get method and make interactive web pages with combination of
+view engine and middleware modules.
+
+**********EJS module or packages*********
+register view engine to render the specific content for web page and insert dynamic value.
+use middleware to check the every single request to server
+
+*******Morgan modules or packages**********
+3rd party middleware in order to check request dynamically.
+no need create middleware from scretch everytime
+
+********Static middleware*******
+make public any folder from the browser so that user also can browse static files
+like css or speedsheet using browser also.
+
+*******SQL vs NoSQL*************
+tables, rows and columns (MySQL/mariaDB)
+collections, documents (mongoDB)
+Note: mongoose is an ODM library- object Docoment mapping library
+combination of schemas and models: sechemas meaning here properties and property types
+models here allows us to communicate with database (get, save, delete etc).
+
+
