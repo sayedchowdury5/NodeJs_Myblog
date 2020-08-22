@@ -24,7 +24,7 @@ mkdir <dir name here>
 touch <file name>
 
 //go to vscode editor
-git code .
+code .
 
 //go to atom editor
 Atom <file name>
